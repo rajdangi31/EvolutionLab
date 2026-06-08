@@ -9,10 +9,10 @@ It creates a simple 2D world where agents move around, search for food, consume 
 1. **Evolutionary search**
    - A population of agents is created.
    - Each agent has a small neural-network brain.
-   - Agents do not learn during their lifetime.
+   - Neural-network weights are not updated by gradients during an agent's lifetime.
    - At the end of each generation, the best agents reproduce.
    - Their offspring inherit mutated versions of their brains.
-   - Improvement comes from selection and mutation.
+   - Long-term improvement comes from selection and mutation.
 
 2. **Single-agent reinforcement learning**
    - One agent repeatedly trains in the same type of world.
@@ -188,14 +188,14 @@ That version tested whether basic selection and mutation could evolve food-seeki
 
 The current evolutionary model is more advanced.
 
-The brain now has:
+The vectorized social brain now has:
 
 ```text
-10 inputs
+13 input slots
 6 outputs
 ```
 
-The 10 inputs are:
+The first 10 inputs are:
 
 1. Observed or remembered `dx` to food
 2. Observed or remembered `dy` to food
@@ -207,6 +207,8 @@ The 10 inputs are:
 8. Memory `dy`
 9. Memory strength
 10. Local communication signal from nearby agents
+
+The final 3 input slots are used for cultural-memory direction and confidence. They remain zero unless cultural memory is enabled.
 
 The 6 outputs are:
 
@@ -459,7 +461,7 @@ Default mutation strength:
 0.18
 ```
 
-This is evolutionary search. There is no learning during an individual agent's lifetime.
+This is evolutionary search. Neural-network weights are not trained during an individual agent's lifetime. In the social configuration, agents can optionally use lifetime action-bias adaptation, but that bias resets between generations and is not backpropagation or Q-learning.
 
 ## 14. Visualization
 

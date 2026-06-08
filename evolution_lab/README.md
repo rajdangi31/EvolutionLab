@@ -266,9 +266,9 @@ python main.py --reproducibility --generations 500 --reproducibility-seeds 100
 
 The project asks:
 
-> Can evolutionary selection alone produce increasingly competent food-seeking behavior in a simple grid world?
+> Can evolutionary selection produce increasingly competent food-seeking behavior in a simple grid world, and how does it compare with a Q-learning baseline?
 
-The test is whether best and average fitness improve over generations without any learning during an agent lifetime. Agents do not receive gradients or direct instruction. They only inherit mutated policies from earlier generations.
+The test is whether best and average fitness improve over generations without gradient-based neural-network training. In the social configuration, agents can use lifetime action-bias adaptation, but their neural-network weights are still inherited through selection and mutation rather than backpropagation.
 
 ## Expected Outcomes
 
@@ -282,7 +282,7 @@ Because the world is stochastic, individual runs can vary. Use seeds and multipl
 - Agents do not sense other agents.
 - Agents do not reproduce during their lifetime.
 - The environment has no predators, hazards, seasons, or scarcity dynamics beyond food placement.
-- Neural networks have no memory.
+- Neural networks are small feedforward policies; memory is represented by explicit state inputs when enabled.
 - Selection pressure is hand-designed through the fitness function.
 - This is not proof of general intelligence; it is a minimal evolutionary search experiment.
 

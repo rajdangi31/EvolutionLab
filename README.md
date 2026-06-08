@@ -58,11 +58,11 @@ Summary:
 | Runs above 9000 | 5 / 100 |
 | Runs above original 9026.7 | 5 / 100 |
 
+![Reproducibility dashboard](assets/figures/reproducibility_dashboard.png)
+
 ![Best score histogram](assets/figures/reproducibility_best_score_histogram.png)
 
 ![Best score CDF](assets/figures/reproducibility_best_score_cdf.png)
-
-![Reproducibility dashboard](assets/figures/reproducibility_dashboard.png)
 
 ### Evolution vs Q-Learning
 
