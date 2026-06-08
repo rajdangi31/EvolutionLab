@@ -1,0 +1,33 @@
+.venv/
+__pycache__/
+*.py[cod]
+
+.cupy-cache/
+.matplotlib-cache/
+
+# Default local run outputs. Curated result summaries and figures are kept in
+# docs/ and assets/figures/.
+metrics.csv
+q_learning_metrics.csv
+social_evolution_metrics.csv
+plots/
+q_learning_plots/
+social_evolution_plots/
+comparison_plots/
+social_vs_q_learning_comparison/
+benchmark_results/group_*/
+reproducibility_seed_runs/
+q_learning_reproducibility_seed_runs/
+social_graphs/
+
+# Large/generated root-level reports are intentionally represented by curated docs.
+top_runs.csv
+best_score_boxplot.png
+best_score_cdf.png
+best_score_histogram.png
+peak_generation_histogram.png
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
